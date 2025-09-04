@@ -4,19 +4,27 @@ AI Agents for the World system
 """
 
 from .base_agent import BaseAgent
-from .orchestrator import OrchestratorAgent
 from .coding_agent import CodingAgent
-from .data_agent import DataAgent
-from .communication_agent import CommunicationAgent
-from .business_agent import BusinessAgent
-from .analytics_agent import AnalyticsAgent
+
+try:
+    from .orchestrator import OrchestratorAgent
+    from .data_agent import DataAgent
+    from .communication_agent import CommunicationAgent
+    from .business_agent import BusinessAgent
+    from .analytics_agent import AnalyticsAgent
+except Exception:  # pragma: no cover - optional deps
+    OrchestratorAgent = None
+    DataAgent = None
+    CommunicationAgent = None
+    BusinessAgent = None
+    AnalyticsAgent = None
 
 __all__ = [
     'BaseAgent',
+    'CodingAgent',
     'OrchestratorAgent',
-    'CodingAgent', 
     'DataAgent',
     'CommunicationAgent',
     'BusinessAgent',
-    'AnalyticsAgent'
+    'AnalyticsAgent',
 ]

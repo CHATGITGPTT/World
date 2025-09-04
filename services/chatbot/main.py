@@ -16,10 +16,10 @@ from .services.conversation_service import ConversationService
 from .services.knowledge_service import KnowledgeService
 from .services.analytics_service import AnalyticsService
 from .database import get_db
-from . import config
+from . import config as app_config
 
 # Configure logging
-logging.basicConfig(level=getattr(logging, config.LOG_LEVEL))
+logging.basicConfig(level=getattr(logging, app_config.LOG_LEVEL))
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
@@ -29,15 +29,14 @@ app = FastAPI(
 )
 
 # Security middleware
-app.add_middleware(
-    TrustedHostMiddleware,
-    allowed_hosts=["*"]  # Configure appropriately for production
-)
+app.add_middleware(TrustedHostMiddleware, allowed_hosts=app_config.ALLOWED_HOSTS)
+if not app_config.ALLOWED_HOSTS:
+    raise RuntimeError("ALLOWED_HOSTS cannot be empty.")
 
 # CORS middleware with configurable origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=config.CORS_ORIGINS,
+    allow_origins=app_config.CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
@@ -59,7 +58,7 @@ async def rate_limit_middleware(request: Request, call_next):
     ]
     
     # Check rate limits
-    if len(rate_limit_storage[client_ip]) >= config.RATE_LIMIT_PER_HOUR:
+    if len(rate_limit_storage[client_ip]) >= app_config.RATE_LIMIT_PER_HOUR:
         raise HTTPException(status_code=429, detail="Rate limit exceeded. Please try again later.")
     
     # Add current request
@@ -85,8 +84,8 @@ class ChatMessage(BaseModel):
     def validate_message(cls, v):
         if not v or not v.strip():
             raise ValueError('Message cannot be empty')
-        if len(v) > config.MAX_MESSAGE_LENGTH:
-            raise ValueError(f'Message too long. Maximum length is {config.MAX_MESSAGE_LENGTH} characters')
+        if len(v) > app_config.MAX_MESSAGE_LENGTH:
+            raise ValueError(f'Message too long. Maximum length is {app_config.MAX_MESSAGE_LENGTH} characters')
         return v.strip()
     
     @validator('user_id')
@@ -138,7 +137,7 @@ async def chat_endpoint(message: ChatMessage, db=Depends(get_db)):
         )
         
         # Log conversation for analytics if enabled
-        if config.ANALYTICS_ENABLED:
+        if app_config.ANALYTICS_ENABLED:
             await analytics_service.log_interaction(
                 user_id=message.user_id,
                 session_id=session_id,
@@ -173,14 +172,14 @@ async def chat_endpoint(message: ChatMessage, db=Depends(get_db)):
 @app.get("/analytics/dashboard")
 async def get_analytics():
     """Get conversation analytics dashboard data"""
-    if not config.ANALYTICS_ENABLED:
+    if not app_config.ANALYTICS_ENABLED:
         raise HTTPException(status_code=503, detail="Analytics service is disabled")
     return await analytics_service.get_dashboard_data()
 
 @app.post("/feedback")
 async def submit_feedback(feedback: Dict[str, Any]):
     """Submit user feedback for continuous learning"""
-    if not config.ANALYTICS_ENABLED:
+    if not app_config.ANALYTICS_ENABLED:
         raise HTTPException(status_code=503, detail="Analytics service is disabled")
     await analytics_service.log_feedback(feedback)
     return {"status": "success"}
@@ -195,7 +194,7 @@ async def health_check():
         "services": {
             "nlu": "operational",
             "conversation": "operational",
-            "analytics": "operational" if config.ANALYTICS_ENABLED else "disabled"
+            "analytics": "operational" if app_config.ANALYTICS_ENABLED else "disabled"
         }
     }
 

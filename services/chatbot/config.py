@@ -13,6 +13,7 @@ INTENT_MODEL = os.getenv("INTENT_MODEL", "facebook/bart-large-mnli")
 SENTIMENT_MODEL = os.getenv("SENTIMENT_MODEL", "cardiffnlp/twitter-roberta-base-sentiment-latest")
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key-change-in-production")
 CORS_ORIGINS = ["http://localhost:3000", "http://localhost:8000"]
+ALLOWED_HOSTS = [h.strip() for h in os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",") if h.strip()]
 RATE_LIMIT_PER_MINUTE = int(os.getenv("RATE_LIMIT_PER_MINUTE", "60"))
 RATE_LIMIT_PER_HOUR = int(os.getenv("RATE_LIMIT_PER_HOUR", "1000"))
 SESSION_TIMEOUT = int(os.getenv("SESSION_TIMEOUT", "3600"))
