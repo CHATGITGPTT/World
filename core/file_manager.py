@@ -7,18 +7,20 @@ File management system for the World AI Agent System
 import os
 import shutil
 import tempfile
+import logging
 from pathlib import Path
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 
 class WorldFileManager:
     """File management system for World"""
-    
-    def __init__(self, base_path: Path):
+
+    def __init__(self, base_path: Path, logger: logging.Logger | None = None):
         self.base_path = Path(base_path)
         self.temp_dir = self.base_path / "temp"
         self.cache_dir = self.base_path / "cache"
         self.backup_dir = self.base_path / "backups"
+        self.log = logger or logging.getLogger("file_manager")
         
         # Create directories
         self.temp_dir.mkdir(parents=True, exist_ok=True)
@@ -41,6 +43,7 @@ class WorldFileManager:
             
             return path.read_text(encoding='utf-8')
         except Exception:
+            self.log.exception("read_file failed: %s", file_path)
             return None
     
     def write_file(self, file_path: str, content: str, backup: bool = True) -> bool:
@@ -61,6 +64,7 @@ class WorldFileManager:
             path.write_text(content, encoding='utf-8')
             return True
         except Exception:
+            self.log.exception("write_file failed: %s", file_path)
             return False
     
     def delete_file(self, file_path: str) -> bool:

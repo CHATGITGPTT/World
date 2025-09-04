@@ -14,9 +14,9 @@ from .base_agent import BaseAgent, AgentTask
 
 class CodingAgent(BaseAgent):
     """Agent responsible for coding and software development tasks"""
-    
-    def __init__(self, services: Dict[str, Any]):
-        super().__init__("coding", services)
+
+    def __init__(self, services: Dict[str, Any] | None = None):
+        super().__init__("coding", services or {})
         
     async def process_task(self, task: AgentTask) -> Dict[str, Any]:
         """Process coding-related tasks"""
@@ -25,7 +25,7 @@ class CodingAgent(BaseAgent):
             description = task.description.lower()
             
             if task_type == "create_project" or "create project" in description:
-                return await self._create_project(task)
+                return await self._create_project_async(task)
             elif "code" in description or "program" in description:
                 return await self._generate_code(task)
             elif "build" in description or "compile" in description:
@@ -39,14 +39,12 @@ class CodingAgent(BaseAgent):
             self.logger.error(f"Coding task failed: {e}")
             return {"error": str(e)}
     
-    async def _create_project(self, task: AgentTask) -> Dict[str, Any]:
-        """Create a new project"""
+    async def _create_project_async(self, task: AgentTask) -> Dict[str, Any]:
+        """Create a new project from an AgentTask"""
         try:
-            # Extract project details from task
             description = task.description
             data = task.data
-            
-            # Determine project type and name
+
             if "python" in description:
                 project_type = "python"
             elif "web" in description or "html" in description:
@@ -54,34 +52,35 @@ class CodingAgent(BaseAgent):
             elif "api" in description:
                 project_type = "api"
             else:
-                project_type = "python"  # default
-            
-            # Extract project name
+                project_type = "python"
+
             project_name = data.get("project_name", "new_project")
-            
-            # Create project directory
+
             projects_dir = self.file_manager.base_path / "data" / "projects"
             project_dir = projects_dir / project_name
             project_dir.mkdir(parents=True, exist_ok=True)
-            
-            # Create project files based on type
+
             if project_type == "python":
                 await self._create_python_project(project_dir)
             elif project_type == "web":
                 await self._create_web_project(project_dir)
             elif project_type == "api":
                 await self._create_api_project(project_dir)
-            
-            return {
-                "success": True,
-                "project_name": project_name,
-                "project_type": project_type,
-                "project_path": str(project_dir),
-                "files_created": list(project_dir.glob("*"))
-            }
-            
+
+            return self._create_project(project_dir, project_name, project_type)
+
         except Exception as e:
             return {"error": f"Project creation failed: {e}"}
+
+    def _create_project(self, project_dir, project_name=None, project_type=None):
+        """Internal helper to build response with project details."""
+        return {
+            "success": True,
+            "project_name": project_name or project_dir.name,
+            "project_type": project_type or "unknown",
+            "project_path": str(project_dir),
+            "files_created": [str(p) for p in project_dir.glob("*")]
+        }
     
     async def _create_python_project(self, project_dir):
         """Create a Python project structure"""
