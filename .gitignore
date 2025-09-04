@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+.venv/
+.env*/
+.eggs/
+*.egg-info/
+build/
+dist/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node
+node_modules/
+.npm/
+.pnpm-store/
+
+# Logs
+logs/
+*.log
+nohup.out
+
+# Cache
+.cache/
+.temp/
+temp/
+cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Tests
+.pytest_cache/
+coverage/
+
+# Others
+*.swp
+*.swo
+*.tmp
+Thumbs.db
