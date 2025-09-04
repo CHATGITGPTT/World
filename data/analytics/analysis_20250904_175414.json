@@ -1,0 +1,14 @@
+{
+  "file": "/Users/ranjeetsinghHome/ProjectsAI/World/data/scraped/scraped_data_20250904_175414.json",
+  "total_records": 1,
+  "data_types": {
+    "url": "text",
+    "title": "text",
+    "headings": "list",
+    "links": "list",
+    "text_content": "text",
+    "scraped_at": "text"
+  },
+  "summary": "Data Summary:\n- Total records: 1\n- Fields: url, title, headings, links, text_content, scraped_at\n- Sample title: Example Domain...\n- Headings found: 1\n- Links found: 1\n",
+  "analyzed_at": "2025-09-04T17:54:14.939884"
+}

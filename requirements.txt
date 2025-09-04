@@ -1,0 +1,64 @@
+# World AI Agent System Requirements
+
+# Core dependencies
+asyncio
+aiofiles
+pathlib
+dataclasses
+typing
+json
+datetime
+logging
+subprocess
+tempfile
+shutil
+os
+sys
+
+# Web scraping and data processing
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+playwright>=1.40.0
+cheerio
+robots-parser
+
+# AI and ML
+google-generativeai>=0.3.0
+openai>=1.0.0
+anthropic>=0.7.0
+
+# Data analysis
+pandas>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Web framework
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.0.0
+python-multipart>=0.0.6
+
+# Database
+sqlalchemy>=2.0.0
+sqlite3
+redis>=5.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+click>=8.1.0
+rich>=13.0.0
+typer>=0.9.0
+
+# Development
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
+
+# Optional: For advanced features
+# smolagents[toolkit]
+# langchain
+# chromadb
+# pinecone-client

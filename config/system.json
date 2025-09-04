@@ -1,0 +1,114 @@
+{
+  "system": {
+    "name": "World AI Agent System",
+    "version": "1.0.0",
+    "mode": "development",
+    "description": "Universal AI Agent System that integrates all tools and capabilities"
+  },
+  "api": {
+    "port": 8000,
+    "host": "localhost",
+    "cors_origins": ["*"],
+    "rate_limit_per_hour": 1000,
+    "max_message_length": 10000
+  },
+  "agents": {
+    "orchestrator": {
+      "enabled": true,
+      "max_concurrent_tasks": 10,
+      "task_timeout": 300
+    },
+    "coding": {
+      "enabled": true,
+      "languages": ["python", "javascript", "html", "css", "json"],
+      "max_file_size": 10485760
+    },
+    "data": {
+      "enabled": true,
+      "max_scrape_depth": 3,
+      "max_pages": 50,
+      "rate_limit": 1000,
+      "respect_robots": true
+    },
+    "communication": {
+      "enabled": true,
+      "max_content_length": 50000,
+      "supported_formats": ["text", "html", "markdown"]
+    },
+    "business": {
+      "enabled": true,
+      "max_leads": 100,
+      "lead_scoring": true,
+      "market_analysis": true
+    },
+    "analytics": {
+      "enabled": true,
+      "max_analysis_records": 10000,
+      "report_formats": ["json", "csv", "html"]
+    }
+  },
+  "services": {
+    "database": {
+      "type": "sqlite",
+      "path": "data/world.db"
+    },
+    "redis": {
+      "enabled": false,
+      "host": "localhost",
+      "port": 6379
+    },
+    "logging": {
+      "level": "INFO",
+      "file_rotation": true,
+      "max_file_size": 10485760
+    },
+    "memory": {
+      "max_experiences": 1000,
+      "auto_refine": true,
+      "refine_interval": 300
+    }
+  },
+  "ai": {
+    "gemini": {
+      "enabled": true,
+      "model": "gemini-1.5-flash",
+      "temperature": 0.7,
+      "max_tokens": 1000
+    },
+    "openai": {
+      "enabled": false,
+      "model": "gpt-4",
+      "temperature": 0.7,
+      "max_tokens": 1000
+    }
+  },
+  "security": {
+    "authentication": {
+      "enabled": false,
+      "jwt_secret": "your-secret-key-here"
+    },
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 60,
+      "requests_per_hour": 1000
+    },
+    "cors": {
+      "enabled": true,
+      "allowed_origins": ["*"]
+    }
+  },
+  "monitoring": {
+    "health_checks": {
+      "enabled": true,
+      "interval": 30
+    },
+    "metrics": {
+      "enabled": true,
+      "collection_interval": 60
+    },
+    "alerts": {
+      "enabled": false,
+      "email_notifications": false
+    }
+  }
+}

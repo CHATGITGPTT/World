@@ -1,0 +1,29 @@
+{
+  "gemini_api_key": "",
+  "output_dir": "./output",
+  "scraper_config": {
+    "scraper_port": 3001,
+    "scraper_host": "localhost",
+    "scraper_path": "../webScraper/backend",
+    "timeout": 30
+  },
+  "ai_config": {
+    "api_key": "",
+    "model": "gemini-1.5-flash",
+    "temperature": 0.7,
+    "max_tokens": 1000,
+    "timeout": 30
+  },
+  "email_templates": {
+    "default_tone": "professional",
+    "default_call_to_action": "Schedule a meeting",
+    "max_email_length": 300
+  },
+  "scraping_rules": {
+    "max_depth": 2,
+    "delay_ms": 1000,
+    "max_pages": 10,
+    "respect_robots": true,
+    "follow_links": true
+  }
+}

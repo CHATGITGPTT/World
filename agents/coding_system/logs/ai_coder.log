@@ -1,0 +1,69 @@
+2025-09-02 07:09:02,130 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:10:38,301 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:10:38,303 - AICoder - INFO - Project created: hello
+2025-09-02 07:11:06,457 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:11:06,458 - AICoder - ERROR - Project creation failed: Project hello already exists
+2025-09-02 07:11:10,830 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:11:14,338 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:11:16,342 - AICoder - INFO - Project hello executed successfully
+2025-09-02 07:11:20,329 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:11:24,273 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:11:24,276 - AICoder - INFO - Project created: test_project
+2025-09-02 07:11:32,541 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:11:34,226 - AICoder - INFO - Project test_project executed successfully
+2025-09-02 07:11:37,804 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:11:37,805 - AICoder - ERROR - Project creation failed: Error creating project: ' margin'
+2025-09-02 07:11:41,051 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:11:48,228 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:11:48,229 - AICoder - ERROR - Project creation failed: Error creating project: Replacement index 0 out of range for positional args tuple
+2025-09-02 07:11:51,736 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:11:56,880 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:12:21,542 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:12:21,590 - AICoder - INFO - Project created: test_advanced
+2025-09-02 07:12:25,298 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:12:28,790 - AICoder - INFO - AI Coder System initialized
+2025-09-02 07:12:30,767 - AICoder - INFO - Project test_advanced executed successfully
+2025-09-02 20:28:15,292 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:28:20,731 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:28:20,733 - AICoder - INFO - Project created: TestApp
+2025-09-02 20:28:36,155 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:28:38,154 - AICoder - INFO - Project TestApp executed successfully
+2025-09-02 20:28:43,626 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:28:43,626 - AICoder - ERROR - Project creation failed: Error creating project: ' margin'
+2025-09-02 20:28:50,250 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:28:50,251 - AICoder - ERROR - Project creation failed: Error creating project: Replacement index 0 out of range for positional args tuple
+2025-09-02 20:28:55,632 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:29:14,725 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:29:51,070 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:30:03,768 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:30:05,530 - AICoder - INFO - Project hello executed successfully
+2025-09-02 20:36:05,877 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:36:05,878 - AICoder - ERROR - Project creation failed: Project WebDemo already exists
+2025-09-02 20:36:11,273 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:36:11,275 - AICoder - INFO - Project created: WebDemo2
+2025-09-02 20:36:22,597 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:36:22,598 - AICoder - ERROR - Project creation failed: Error creating project: Replacement index 0 out of range for positional args tuple
+2025-09-02 20:36:52,988 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:36:52,990 - AICoder - ERROR - Project creation failed: Error creating project: Replacement index 0 out of range for positional args tuple
+2025-09-02 20:38:31,310 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:38:31,310 - AICoder - ERROR - Project creation failed: Error creating project: Replacement index 0 out of range for positional args tuple
+2025-09-02 20:38:53,810 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:38:53,811 - AICoder - ERROR - Project creation failed: Error creating project: Replacement index 0 out of range for positional args tuple
+2025-09-02 20:39:24,503 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:39:24,504 - AICoder - ERROR - Project creation failed: Error creating project: Replacement index 0 out of range for positional args tuple
+2025-09-02 20:39:39,904 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:39:39,905 - AICoder - ERROR - Project creation failed: Error creating project: Replacement index 0 out of range for positional args tuple
+2025-09-02 20:39:58,324 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:39:58,324 - AICoder - ERROR - Project creation failed: Error creating project: Replacement index 0 out of range for positional args tuple
+2025-09-02 20:40:03,985 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:40:03,986 - AICoder - ERROR - Project creation failed: Error creating project: Replacement index 0 out of range for positional args tuple
+2025-09-02 20:40:08,719 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:40:08,721 - AICoder - INFO - Project created: SimpleApp
+2025-09-02 20:40:13,913 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:40:19,271 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:58:12,083 - AICoder - INFO - AI Coder System initialized
+2025-09-02 20:58:12,085 - AICoder - ERROR - Project creation failed: Error creating project: Replacement index 0 out of range for positional args tuple
+2025-09-02 21:04:16,069 - AICoder - INFO - AI Coder System initialized
+2025-09-02 21:04:20,823 - AICoder - INFO - AI Coder System initialized
+2025-09-02 21:04:25,672 - AICoder - INFO - AI Coder System initialized
+2025-09-02 21:05:34,900 - AICoder - ERROR - Project SmallBusinessAnalytics execution failed

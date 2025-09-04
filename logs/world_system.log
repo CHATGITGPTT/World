@@ -1,0 +1,5 @@
+2025-09-04 17:54:11,916 - world.system - INFO - World Orchestrator started
+2025-09-04 17:54:12,788 - world.system - WARNING - Web scraper failed, using fallback: Expecting value: line 1 column 1 (char 0)
+2025-09-04 17:54:14,940 - world.system - INFO - World Orchestrator stopped
+2025-09-04 17:56:52,910 - world.system - INFO - World Orchestrator started
+2025-09-04 17:56:52,913 - world.system - ERROR - Command execution failed: Object of type PosixPath is not JSON serializable
