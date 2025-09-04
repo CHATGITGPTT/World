@@ -1,26 +1,12 @@
 # World AI Agent System Requirements
 
 # Core dependencies
-asyncio
 aiofiles
-pathlib
-dataclasses
-typing
-json
-datetime
-logging
-subprocess
-tempfile
-shutil
-os
-sys
 
 # Web scraping and data processing
 requests>=2.31.0
 beautifulsoup4>=4.12.0
 playwright>=1.40.0
-cheerio
-robots-parser
 
 # AI and ML
 google-generativeai>=0.3.0
@@ -41,7 +27,6 @@ python-multipart>=0.0.6
 
 # Database
 sqlalchemy>=2.0.0
-sqlite3
 redis>=5.0.0
 
 # Utilities
