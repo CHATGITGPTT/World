@@ -189,7 +189,7 @@ async def submit_feedback(feedback: Dict[str, Any]):
 async def health_check():
     """Health check endpoint for monitoring"""
     return {
-        "status": "healthy", 
+        "status": "ok", 
         "timestamp": datetime.now(),
         "version": "2.0.0",
         "services": {
